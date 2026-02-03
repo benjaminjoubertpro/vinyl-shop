@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="container">
-            <h2>Our Products</h2>
+            <h2>Les meilleurs ventes :</h2>
             <div class="product-grid">
                 <product-card v-for="product in products" :key="product.id" :product="product" />
                 <product-card v-for="product in products" :key="product.id" :product="product" />
@@ -15,8 +15,8 @@
 const products = [
     {
         id: 1,
-        title: "Album Title",
-        artist: "Artist Name",
+        title: "Thriller",
+        artist: "Mickeal Jackson",
         price: 29.99,
         image: "img/thriller.jpg"
     },
@@ -45,11 +45,11 @@ section {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
     font-size: 2rem;
-    font-weight: bold;
-    color: var(--text);
+    font-weight: 600;
+    color: var(--color-black);
 }
 
 .product-grid {

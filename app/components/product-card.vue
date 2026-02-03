@@ -3,7 +3,7 @@
         <img :src="product.image" :alt="product.title">
         <h3>{{ product.title }}</h3>
         <p>{{ product.artist }}</p>
-        <p>{{ product.price }}</p>
+        <p>{{ product.price }}€</p>
         <div class="btn-product">
             <a class="btn" href="#">Voir Plus</a>
             <a class="btn2" href="#">Ajouter au panier</a>
@@ -25,7 +25,7 @@ defineProps({
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     background: #fff;
@@ -44,6 +44,7 @@ defineProps({
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
+    color: var(--color-black);
 }
 
 .product-card p {
