@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="flex justify-between items-center bg-black text-white px-4 py-4">
+        <div class="flex justify-between items-center bg-black text-white px-4 py-4 fixed top-0 left-0 right-0">
             <div class="flex justify-center items-center gap-6">
                 <img class="w-14 h-auto" src="assets/img/logovinyl.png" alt="Logo">
                 <nav>
@@ -13,7 +13,7 @@
             </div>
             <div class="flex gap-4">
                 <a class="btn" href="#">Connexion</a>
-                <a class="btn" href="#">Inscription</a>
+                <a class="btn2" href="#">Inscription</a>
             </div>
         </div>
     </header>
