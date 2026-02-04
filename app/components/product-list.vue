@@ -1,9 +1,11 @@
 <template>
     <section>
         <div class="container">
-            <h2>Les meilleurs ventes :</h2>
+            <div v-if="title" class="head">
+                <h2>{{ title }}</h2>
+                <p v-if="subtitle" class="subtitle">{{ subtitle }}</p>
+            </div>
             <div class="product-grid">
-                <product-card v-for="product in products" :key="product.id" :product="product" />
                 <product-card v-for="product in products" :key="product.id" :product="product" />
 
             </div>
@@ -12,24 +14,20 @@
 </template>
 
 <script setup>
-const products = [
-    {
-        id: 1,
-        title: "Thriller",
-        artist: "Mickeal Jackson",
-        price: 29.99,
-        image: "img/thriller.jpg"
+defineProps({
+    products: {
+        type: Array,
+        required: true
     },
-
-    {
-        id: 2,
-        title: "Album Title",
-        artist: "Artist Name",
-        price: 19.99,
-        image: "img/thriller.jpg"
+    title: {
+        type: String,
+        default: ''
+    },
+    subtitle: {
+        type: String,
+        default: ''
     }
-
-]
+})
 </script>
 
 <style scoped>
@@ -44,17 +42,46 @@ section {
     
 }
 
+.container {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.head {
+    margin-bottom: 1.5rem;
+}
+
 h2 {
     text-align: left;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
+    margin: 0;
+    font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+    font-weight: 900;
     color: var(--color-black);
+}
+
+.subtitle {
+    margin: 0.65rem 0 0;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    max-width: 70ch;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+@media (min-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 </style>
