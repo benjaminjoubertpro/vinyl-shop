@@ -27,13 +27,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="visual" aria-hidden="true">
-                    <div class="vinyl">
-                        <div class="vinyl-inner"></div>
-                    </div>
-                    <div class="sleeve"></div>
-                </div>
             </div>
         </div>
     </section>
@@ -148,56 +141,12 @@ h1 {
     color: rgba(255, 255, 255, 0.72);
 }
 
-.visual {
-    position: relative;
-    display: grid;
-    place-items: center;
-    min-height: 380px;
-}
 
-.sleeve {
-    width: min(360px, 100%);
-    aspect-ratio: 1 / 1;
-    border-radius: 18px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
-    transform: rotate(-6deg);
-}
-
-.vinyl {
-    position: absolute;
-    right: -10px;
-    width: min(320px, 85%);
-    aspect-ratio: 1 / 1;
-    border-radius: 999px;
-    background:
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0 8%, rgba(0, 0, 0, 0.95) 9% 32%, rgba(255, 255, 255, 0.08) 33% 34%, rgba(0, 0, 0, 0.92) 35% 58%, rgba(255, 255, 255, 0.06) 59% 60%, rgba(0, 0, 0, 0.9) 61% 100%);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
-    transform: rotate(10deg);
-}
-
-.vinyl-inner {
-    position: absolute;
-    inset: 18%;
-    border-radius: 999px;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0 10%, rgba(180, 60, 60, 0.9) 11% 25%, rgba(0, 0, 0, 0.9) 26% 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 @media (max-width: 1024px) {
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 2.25rem;
-    }
-
-    .visual {
-        min-height: 320px;
-        justify-items: end;
-    }
-
-    .vinyl {
-        right: 10px;
     }
 }
 
@@ -216,12 +165,5 @@ h1 {
         text-align: center;
     }
 
-    .visual {
-        min-height: 260px;
-    }
-
-    .sleeve {
-        width: min(320px, 100%);
-    }
 }
 </style>

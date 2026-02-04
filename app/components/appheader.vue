@@ -10,26 +10,21 @@
 
                     <nav class="nav" aria-label="Navigation principale">
                         <ul class="nav-list">
-                            <li><a class="nav-link" href="#">Accueil</a></li>
-                            <li><a class="nav-link" href="#">Produits</a></li>
-                            <li><a class="nav-link" href="#">Contact</a></li>
+                            <li><a class="nav-link" href="/">Accueil</a></li>
+                            <li><a class="nav-link" href="/catalogue">Catalogue</a></li>
+                            <li><a class="nav-link" href="/contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="right">
                     <div class="actions">
-                        <a class="btn" href="#">Connexion</a>
-                        <a class="btn2" href="#">Inscription</a>
+                        <a class="btn" href="/connexion">Connexion</a>
+                        <a class="btn2" href="/inscription">Inscription</a>
                     </div>
 
-                    <button
-                        class="burger"
-                        type="button"
-                        :aria-expanded="isOpen"
-                        aria-controls="mobile-menu"
-                        @click="isOpen = !isOpen"
-                    >
+                    <button class="burger" type="button" :aria-expanded="isOpen" aria-controls="mobile-menu"
+                        @click="isOpen = !isOpen">
                         <span class="sr">Menu</span>
                         <span class="burger-lines" aria-hidden="true"></span>
                     </button>
@@ -40,13 +35,13 @@
         <div v-show="isOpen" id="mobile-menu" class="mobile" @click="isOpen = false">
             <div class="mobile-panel" @click.stop>
                 <nav aria-label="Navigation mobile">
-                    <a class="mobile-link" href="#">Accueil</a>
-                    <a class="mobile-link" href="#">Produits</a>
-                    <a class="mobile-link" href="#">Contact</a>
+                    <a class="mobile-link" href="/">Accueil</a>
+                    <a class="mobile-link" href="/catalogue">Catalogue</a>
+                    <a class="mobile-link" href="/contact">Contact</a>
                 </nav>
                 <div class="mobile-actions">
-                    <a class="btn" href="#">Connexion</a>
-                    <a class="btn2" href="#">Inscription</a>
+                    <a class="btn" href="/connexion">Connexion</a>
+                    <a class="btn2" href="/inscription">Inscription</a>
                 </div>
             </div>
         </div>
