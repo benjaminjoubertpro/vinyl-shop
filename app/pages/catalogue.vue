@@ -110,7 +110,7 @@
           </div>
 
           <div class="grid">
-            <product-card v-for="p in placeholderProducts" :key="p.id" :product="p" />
+            <product-card v-for="p in featuredProducts" :key="p.id" :product="p" />
           </div>
 
           <div class="pagination" aria-label="Pagination">
@@ -173,18 +173,14 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue'
 
 const filtersOpen = ref(false)
 
-const placeholderProducts = Array.from({ length: 12 }).map((_, i) => ({
-  id: i + 1,
-  title: i % 3 === 0 ? 'The Dark Side of the Moon (Remastered Edition)' : i % 3 === 1 ? 'Discovery' : 'Kind of Blue',
-  artist: i % 2 === 0 ? 'Artiste' : 'Groupe',
-  price: 19.9 + i,
-  image: '/img/thriller.jpg'
-}))
+import { featuredProducts } from '../logic/product'
 </script>
+
 
 <style scoped>
 .page {
