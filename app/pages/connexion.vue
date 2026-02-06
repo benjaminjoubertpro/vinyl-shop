@@ -4,22 +4,19 @@
   <main class="page">
     <div class="container">
       <header class="hero">
-        <p class="eyebrow">Compte</p>
+        <span class="eyebrow">Compte</span>
         <h1>Connexion</h1>
-        <p class="subtitle">Accède à ton compte pour retrouver tes favoris et tes commandes. (UI only)</p>
+        <p class="subtitle">Retrouvez vos favoris et vos commandes.</p>
       </header>
 
       <div class="layout">
         <section class="card" aria-label="Formulaire de connexion">
-          <div class="card-head">
-            <h2>Se connecter</h2>
-            <p>Renseigne tes identifiants.</p>
-          </div>
+          <h2 class="card-title">Se connecter</h2>
 
           <form class="form" @submit.prevent>
             <div class="field">
               <label class="label" for="email">Email</label>
-              <input id="email" class="input" type="email" placeholder="ton@email.com" />
+              <input id="email" class="input" type="email" placeholder="votre@email.com" />
             </div>
 
             <div class="field">
@@ -33,7 +30,7 @@
             <label class="check"><input type="checkbox" /> Rester connecté</label>
 
             <div class="actions">
-              <button class="btn2" type="submit">Connexion</button>
+              <button class="btn-primary" type="submit">Connexion</button>
               <a class="btn" href="/inscription">Créer un compte</a>
             </div>
 
@@ -47,20 +44,13 @@
         </section>
 
         <aside class="side" aria-label="Informations">
-          <div class="side-card" aria-hidden="true">
-            <div class="side-card-inner">
-              <p class="side-title">Pourquoi créer un compte ?</p>
-              <ul class="bullets">
-                <li>Suivi de commande</li>
-                <li>Favoris</li>
-                <li>Recommandations</li>
-              </ul>
-              <div class="tags">
-                <span class="tag">Rapide</span>
-                <span class="tag">Simple</span>
-                <span class="tag">Sécurisé</span>
-              </div>
-            </div>
+          <div class="side-card">
+            <h3 class="side-title">Pourquoi créer un compte ?</h3>
+            <ul class="bullets">
+              <li>Suivi de commande en temps réel</li>
+              <li>Liste de favoris personnalisée</li>
+              <li>Recommandations sur mesure</li>
+            </ul>
           </div>
         </aside>
       </div>
@@ -73,98 +63,81 @@
 <style scoped>
 .page {
   width: 100%;
-  padding: 2.25rem 0 5rem;
-  background:
-    radial-gradient(900px 320px at 10% 0%, rgba(124, 58, 237, 0.28), transparent 60%),
-    radial-gradient(800px 300px at 90% 0%, rgba(6, 182, 212, 0.22), transparent 60%),
-    radial-gradient(700px 260px at 70% 65%, rgba(249, 115, 22, 0.14), transparent 60%),
-    linear-gradient(180deg, #060608 0%, #0a0a0f 55%, #0b0b10 100%);
+  padding: 2.5rem 0 5rem;
+  background: #0a0a0a;
+  min-height: 80vh;
 }
 
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(900px, calc(100% - 3rem));
   margin: 0 auto;
-  height: 80vh;
 }
 
 .hero {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .eyebrow {
-  margin: 0 0 0.6rem;
-  display: inline-flex;
-  font-weight: 900;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.88);
-  background: rgba(124, 58, 237, 0.18);
-  border: 1px solid rgba(124, 58, 237, 0.28);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  color: #c9a96e;
+  margin-bottom: 0.75rem;
 }
 
 h1 {
+  font-family: 'Playfair Display', serif;
   margin: 0;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #f5f0eb;
+  line-height: 1.15;
 }
 
 .subtitle {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.35);
   line-height: 1.6;
-  max-width: 75ch;
+  font-size: 0.88rem;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 1.25rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
   align-items: start;
 }
 
 .card {
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #111;
   overflow: hidden;
 }
 
-.card-head {
-  padding: 1.15rem 1.15rem 0.95rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background:
-    radial-gradient(600px 200px at 20% 20%, rgba(6, 182, 212, 0.18), transparent 60%),
-    radial-gradient(520px 180px at 80% 30%, rgba(124, 58, 237, 0.18), transparent 60%);
-}
-
-.card-head h2 {
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #f5f0eb;
   margin: 0;
-  font-size: 1.15rem;
-  font-weight: 950;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.card-head p {
-  margin: 0.45rem 0 0;
-  color: rgba(255, 255, 255, 0.68);
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .form {
-  padding: 1.15rem;
+  padding: 1.5rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .field {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.3rem;
 }
 
 .row-head {
@@ -175,50 +148,60 @@ h1 {
 }
 
 .label {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .helper {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
-  font-weight: 800;
-  font-size: 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.helper:hover {
+  color: #c9a96e;
 }
 
 .input {
   width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.8rem 0.85rem;
-  background: rgba(0, 0, 0, 0.25);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.7rem 0.85rem;
+  background: transparent;
+  color: #f5f0eb;
   outline: none;
+  font-family: inherit;
+  font-size: 0.85rem;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.input:focus {
+  border-color: #c9a96e;
 }
 
 .check {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 800;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  font-size: 0.82rem;
 }
 
 .actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
 }
 
 .actions .btn,
-.actions .btn2 {
-  flex: 1 1 220px;
+.actions .btn-primary {
+  flex: 1 1 180px;
   text-align: center;
 }
 
@@ -227,77 +210,61 @@ h1 {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 900;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 
 .divider::before,
 .divider::after {
   content: '';
   height: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .social {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .social-btn {
   width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.85rem;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.7rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-btn:hover {
+  color: #f5f0eb;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .side-card {
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(6, 182, 212, 0.14), rgba(249, 115, 22, 0.12));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 1px;
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
-}
-
-.side-card-inner {
-  border-radius: 17px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.75rem;
 }
 
 .side-title {
-  margin: 0;
-  font-weight: 950;
-  color: rgba(255, 255, 255, 0.92);
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #f5f0eb;
 }
 
 .bullets {
-  margin: 0.9rem 0 0;
-  padding-left: 1.1rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.7;
-  font-weight: 800;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.tag {
-  display: inline-flex;
-  padding: 0.4rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.86);
-  font-weight: 900;
+  margin: 0;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.9;
   font-size: 0.85rem;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
@@ -307,10 +274,6 @@ h1 {
 }
 
 @media (max-width: 640px) {
-  .page {
-    padding: 1.75rem 0 4rem;
-  }
-
   .row-head {
     flex-direction: column;
     align-items: flex-start;
@@ -321,7 +284,7 @@ h1 {
   }
 
   .actions .btn,
-  .actions .btn2 {
+  .actions .btn-primary {
     width: 100%;
     flex: 1 1 auto;
   }

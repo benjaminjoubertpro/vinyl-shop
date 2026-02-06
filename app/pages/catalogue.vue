@@ -5,9 +5,9 @@
     <div class="container">
       <div class="topbar">
         <div class="titles">
-          <p class="eyebrow">Catalogue</p>
-          <h1>Trouve ton prochain vinyle</h1>
-          <p class="subtitle">Recherche, filtres et tri — la logique viendra ensuite, ici c’est le design.</p>
+          <span class="eyebrow">Catalogue</span>
+          <h1>Explorez la collection</h1>
+          <p class="subtitle">Parcourez notre sélection de vinyles — filtrez par genre, prix ou format.</p>
         </div>
 
         <button class="filter-btn" type="button" @click="filtersOpen = true">
@@ -18,10 +18,7 @@
       <div class="layout">
         <aside class="sidebar" aria-label="Filtres">
           <div class="panel">
-            <div class="panel-head">
-              <h2>Filtres</h2>
-              <p>Affinage rapide</p>
-            </div>
+            <h2 class="panel-title">Filtres</h2>
 
             <div class="group">
               <h3>Recherche</h3>
@@ -64,8 +61,8 @@
               </div>
             </div>
 
-            <div class="actions">
-              <button class="btn2" type="button">Appliquer</button>
+            <div class="panel-actions">
+              <button class="btn-primary" type="button">Appliquer</button>
               <button class="btn" type="button">Réinitialiser</button>
             </div>
           </div>
@@ -73,28 +70,15 @@
 
         <section class="results" aria-label="Résultats">
           <div class="toolbar">
-            <div class="search">
-              <span class="search-icon" aria-hidden="true">⌕</span>
-              <input class="search-input" type="search" placeholder="Rechercher dans les résultats…" />
-            </div>
-
+            <input class="search-input" type="search" placeholder="Rechercher…" />
             <div class="controls">
-              <div class="select">
+              <div class="select-wrap">
                 <label class="label" for="sort">Trier</label>
                 <select id="sort" class="select-input">
                   <option>Populaire</option>
                   <option>Prix croissant</option>
                   <option>Prix décroissant</option>
                   <option>Nouveautés</option>
-                </select>
-              </div>
-
-              <div class="select">
-                <label class="label" for="per">Afficher</label>
-                <select id="per" class="select-input">
-                  <option>12</option>
-                  <option>24</option>
-                  <option>48</option>
                 </select>
               </div>
             </div>
@@ -104,7 +88,7 @@
             <p class="count">48 résultats</p>
             <div class="active-filters">
               <span class="tag">Rock</span>
-              <span class="tag">20€ - 40€</span>
+              <span class="tag">20–40€</span>
               <span class="tag">33T</span>
             </div>
           </div>
@@ -162,8 +146,8 @@
             </div>
           </div>
 
-          <div class="actions">
-            <button class="btn2" type="button">Appliquer</button>
+          <div class="panel-actions">
+            <button class="btn-primary" type="button">Appliquer</button>
             <button class="btn" type="button">Réinitialiser</button>
           </div>
         </div>
@@ -173,28 +157,21 @@
 </template>
 
 <script setup>
-
 import { ref } from 'vue'
+import { featuredProducts } from '../logic/product'
 
 const filtersOpen = ref(false)
-
-import { featuredProducts } from '../logic/product'
 </script>
-
 
 <style scoped>
 .page {
   width: 100%;
-  padding: 2.25rem 0 5rem;
-  background:
-    radial-gradient(900px 320px at 10% 0%, rgba(124, 58, 237, 0.28), transparent 60%),
-    radial-gradient(800px 300px at 90% 0%, rgba(6, 182, 212, 0.22), transparent 60%),
-    radial-gradient(700px 260px at 70% 65%, rgba(249, 115, 22, 0.14), transparent 60%),
-    linear-gradient(180deg, #060608 0%, #0a0a0f 55%, #0b0b10 100%);
+  padding: 2.5rem 0 5rem;
+  background: #0a0a0a;
 }
 
 .container {
-  width: min(1200px, calc(100% - 2rem));
+  width: min(1200px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
@@ -203,52 +180,61 @@ import { featuredProducts } from '../logic/product'
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .eyebrow {
-  margin: 0 0 0.6rem;
-  display: inline-flex;
-  font-weight: 900;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.88);
-  background: rgba(124, 58, 237, 0.18);
-  border: 1px solid rgba(124, 58, 237, 0.28);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  color: #c9a96e;
+  margin-bottom: 0.75rem;
 }
 
 h1 {
+  font-family: 'Playfair Display', serif;
   margin: 0;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #f5f0eb;
+  line-height: 1.15;
 }
 
 .subtitle {
-  margin: 0.6rem 0 0;
-  color: rgba(255, 255, 255, 0.72);
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.35);
   line-height: 1.6;
-  max-width: 75ch;
+  max-width: 50ch;
+  font-size: 0.88rem;
 }
 
 .filter-btn {
   display: none;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  padding: 0.6rem 0.9rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #f5f0eb;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -258,39 +244,26 @@ h1 {
 }
 
 .panel {
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #111;
   overflow: hidden;
   position: sticky;
-  top: 88px;
-  backdrop-filter: blur(12px);
+  top: 86px;
 }
 
-.panel-head {
-  padding: 1.1rem 1.1rem 0.9rem;
-  background:
-    radial-gradient(600px 200px at 20% 20%, rgba(6, 182, 212, 0.22), transparent 60%),
-    radial-gradient(520px 180px at 80% 30%, rgba(124, 58, 237, 0.22), transparent 60%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.panel-head h2 {
+.panel-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f5f0eb;
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 950;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.panel-head p {
-  margin: 0.35rem 0 0;
-  color: rgba(255, 255, 255, 0.68);
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .group {
-  padding: 1.05rem 1.1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .group:last-of-type {
@@ -298,138 +271,141 @@ h1 {
 }
 
 .group h3 {
-  margin: 0 0 0.75rem;
-  font-weight: 950;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.65rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .field {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.3rem;
 }
 
 .label {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .input {
   width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.7rem 0.8rem;
-  background: rgba(0, 0, 0, 0.25);
-  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 0.75rem;
+  background: transparent;
+  color: #f5f0eb;
   outline: none;
+  font-family: inherit;
+  font-size: 0.85rem;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.input:focus {
+  border-color: #c9a96e;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
 .chip {
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.5rem 0.7rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  padding: 0.4rem 0.65rem;
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  color: #f5f0eb;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .checks {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .check {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 700;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+  font-size: 0.82rem;
 }
 
-.actions {
-  padding: 1.05rem 1.1rem 1.2rem;
+.panel-actions {
+  padding: 1rem 1.25rem 1.25rem;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.actions .btn,
-.actions .btn2 {
+.panel-actions .btn,
+.panel-actions .btn-primary {
   width: 100%;
   text-align: center;
 }
 
 .toolbar {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.search {
-  position: relative;
-  flex: 1 1 auto;
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.65);
-  font-weight: 900;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .search-input {
-  width: 100%;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.85rem 0.9rem 0.85rem 2.2rem;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 0.85rem;
+  background: transparent;
+  color: #f5f0eb;
   outline: none;
+  font-family: inherit;
+  font-size: 0.85rem;
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.search-input:focus {
+  border-color: #c9a96e;
 }
 
 .controls {
-  display: flex;
-  gap: 0.75rem;
   flex: 0 0 auto;
 }
 
-.select {
+.select-wrap {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.3rem;
 }
 
 .select-input {
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.75rem 0.8rem;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 0.75rem;
+  background: #111;
+  color: rgba(255, 255, 255, 0.6);
   outline: none;
+  font-family: inherit;
+  font-size: 0.82rem;
 }
 
 .meta {
@@ -437,72 +413,39 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin: 0.75rem 0 1.25rem;
-  padding: 0.9rem 1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .count {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  font-size: 0.82rem;
 }
 
 .active-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
   justify-content: flex-end;
 }
 
 .tag {
   display: inline-flex;
-  padding: 0.4rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(124, 58, 237, 0.18);
-  border: 1px solid rgba(124, 58, 237, 0.28);
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.85rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-/* Dark variant for ProductCard ONLY on catalogue page */
-.page :deep(.product-card) {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
-}
-
-.page :deep(.product-card::before) {
-  opacity: 0.18;
-}
-
-.page :deep(.media) {
-  background: radial-gradient(520px 190px at 20% 20%, rgba(124, 58, 237, 0.22), transparent 65%),
-    radial-gradient(420px 160px at 80% 20%, rgba(6, 182, 212, 0.18), transparent 60%);
-}
-
-.page :deep(.title) {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.page :deep(.artist) {
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.page :deep(.price) {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(124, 58, 237, 0.18);
-  border: 1px solid rgba(124, 58, 237, 0.28);
+  gap: 1px;
 }
 
 @media (min-width: 640px) {
@@ -522,38 +465,45 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-top: 1.75rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .pages {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .page-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  font-weight: 950;
-  color: rgba(255, 255, 255, 0.86);
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.page-btn:hover {
+  color: #f5f0eb;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .page-btn.is-active {
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  color: #0a0a0a;
+  background: #f5f0eb;
+  border-color: #f5f0eb;
 }
 
 .dots {
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 900;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
 }
 
 .drawer {
@@ -579,21 +529,19 @@ h1 {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
     padding: 1rem;
     z-index: 50;
   }
 
   .drawer-panel {
-    width: min(520px, 100%);
+    width: min(400px, 100%);
     height: calc(100vh - 2rem);
     margin-left: auto;
-    background: rgba(10, 10, 16, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
     display: grid;
     grid-template-rows: auto 1fr;
   }
@@ -602,24 +550,24 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background:
-      radial-gradient(600px 200px at 20% 20%, rgba(6, 182, 212, 0.14), transparent 60%),
-      radial-gradient(520px 180px at 80% 30%, rgba(124, 58, 237, 0.14), transparent 60%);
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .drawer-head strong {
-    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #f5f0eb;
   }
 
   .drawer-close {
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 999px;
-    padding: 0.5rem 0.75rem;
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent;
+    padding: 0.45rem 0.7rem;
+    font-weight: 500;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
   }
 
   .drawer-body {
@@ -629,16 +577,12 @@ h1 {
 
 @media (max-width: 640px) {
   .topbar {
+    flex-direction: column;
     align-items: flex-start;
   }
 
   .toolbar {
-    grid-template-columns: 1fr;
-    align-items: stretch;
-  }
-
-  .controls {
-    width: 100%;
+    flex-direction: column;
   }
 
   .pagination .btn {

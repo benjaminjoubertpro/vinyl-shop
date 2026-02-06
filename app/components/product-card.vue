@@ -1,157 +1,126 @@
 <template>
-    <article class="product-card">
-        <div class="media">
-            <img :src="product.image" :alt="product.title">
-        </div>
-
-        <div class="body">
-            <div class="top">
-                <div class="text">
-                    <h3 class="title">{{ product.title }}</h3>
-                    <p class="artist">{{ product.artist }}</p>
-                </div>
-
-                <p class="price">{{ product.price }}€</p>
-            </div>
-
-            <div class="btn-product">
-                <a class="btn" href="#">Voir Plus</a>
-                <a class="btn2" href="#">Ajouter au panier</a>
-            </div>
-        </div>
-    </article>
+  <article class="product-card">
+    <div class="media">
+      <img :src="product.image" :alt="product.title">
+    </div>
+    <div class="body">
+      <div class="info">
+        <p class="artist">{{ product.artist }}</p>
+        <h3 class="title">{{ product.title }}</h3>
+      </div>
+      <div class="bottom">
+        <span class="price">{{ product.price }}&euro;</span>
+        <a class="card-link" href="#">Voir plus →</a>
+      </div>
+    </div>
+  </article>
 </template>
 
 <script setup>
 defineProps({
-    product: {
-        type: Object,
-        required: true
-    }
+  product: {
+    type: Object,
+    required: true
+  }
 })
 </script>
 
 <style scoped>
 .product-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-.product-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.35), rgba(249, 115, 22, 0.35));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-}
-
-.product-card:hover::before {
-    opacity: 1;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .media {
-    position: relative;
-    background: radial-gradient(500px 180px at 20% 20%, rgba(124, 58, 237, 0.14), transparent 65%),
-        radial-gradient(420px 160px at 80% 20%, rgba(6, 182, 212, 0.12), transparent 60%);
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #0e0e0e;
 }
 
 .media img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .media img {
+  transform: scale(1.03);
 }
 
 .body {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    flex: 1 1 auto;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1 1 auto;
 }
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.75rem;
-}
-
-.text {
-    min-width: 0;
-}
-
-.title {
-    font-size: 1.05rem;
-    font-weight: 900;
-    margin: 0;
-    color: #0b0b0b;
-    line-height: 1.2;
-    display: -webkit-box;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.info {
+  min-width: 0;
 }
 
 .artist {
-    margin: 0.35rem 0 0;
-    color: rgba(0, 0, 0, 0.65);
-    font-weight: 600;
-    font-size: 0.95rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  margin: 0 0 0.2rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f5f0eb;
+  line-height: 1.25;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .price {
-    margin: 0;
-    font-weight: 950;
-    color: #0b0b0b;
-    background: rgba(124, 58, 237, 0.12);
-    border: 1px solid rgba(124, 58, 237, 0.18);
-    padding: 0.35rem 0.6rem;
-    border-radius: 999px;
-    white-space: nowrap;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f5f0eb;
 }
 
-.btn-product {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: auto;
+.card-link {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
 }
 
-@media (max-width: 640px) {
-    .btn-product {
-        width: 100%;
-    }
-
-    .btn,
-    .btn2 {
-        flex: 1 1 100%;
-        text-align: center;
-    }
+.card-link:hover {
+  color: #c9a96e;
 }
 </style>

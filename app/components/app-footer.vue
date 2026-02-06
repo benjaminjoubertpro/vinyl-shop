@@ -3,15 +3,40 @@
     <div class="container">
       <div class="top">
         <div class="brand">
-          <strong>Vinyl Shop</strong>
-          <p>La sélection qui donne envie de remettre la face A… puis la face B.</p>
+          <strong class="brand-name">Vinyl Shop</strong>
+          <p class="brand-desc">
+            Vinyles neufs, rééditions et raretés depuis 2023.
+            Une sélection pensée pour les amateurs exigeants.
+          </p>
         </div>
 
-        <nav class="links" aria-label="Pied de page">
-          <a href="#">Catalogue</a>
-          <a href="#">Contact</a>
-          <a href="#">Mentions</a>
-        </nav>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <nav aria-label="Navigation footer">
+              <a href="/">Accueil</a>
+              <a href="/catalogue">Catalogue</a>
+              <a href="/contact">Contact</a>
+            </nav>
+          </div>
+
+          <div class="footer-col">
+            <h4>Compte</h4>
+            <nav aria-label="Compte footer">
+              <a href="/connexion">Connexion</a>
+              <a href="/inscription">Inscription</a>
+            </nav>
+          </div>
+
+          <div class="footer-col">
+            <h4>Informations</h4>
+            <nav aria-label="Informations footer">
+              <a href="#">Mentions légales</a>
+              <a href="#">CGV</a>
+              <a href="#">Confidentialité</a>
+            </nav>
+          </div>
+        </div>
       </div>
 
       <div class="bottom">
@@ -28,27 +53,13 @@ const year = new Date().getFullYear()
 <style scoped>
 .footer {
   width: 100%;
-  color: #f0f0f0;
-  padding: 3rem 0;
-  background:
-    radial-gradient(900px 280px at 15% 20%, rgba(124, 58, 237, 0.22), transparent 60%),
-    radial-gradient(800px 260px at 85% 20%, rgba(6, 182, 212, 0.18), transparent 60%),
-    #070707;
-  position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(124, 58, 237, 1), rgba(6, 182, 212, 1), rgba(249, 115, 22, 1));
+  padding: 3.5rem 0 2rem;
+  background: #070707;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1100px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
@@ -56,56 +67,93 @@ const year = new Date().getFullYear()
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 4rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.brand strong {
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+.brand {
+  max-width: 260px;
 }
 
-.brand p {
-  margin: 0.5rem 0 0;
-  color: #bdbdbd;
-  line-height: 1.6;
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f5f0eb;
+  letter-spacing: 0.01em;
 }
 
-.links {
+.brand-desc {
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1.7;
+  font-size: 0.8rem;
+}
+
+.footer-columns {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 3.5rem;
 }
 
-.links a {
-  color: rgba(255, 255, 255, 0.88);
+.footer-col h4 {
+  margin: 0 0 0.85rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.footer-col nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.footer-col nav a {
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  border-radius: 999px;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  transition: transform 0.15s ease, background 0.15s ease;
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.15rem 0;
+  transition: color 0.2s ease;
 }
 
-.links a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
+.footer-col nav a:hover {
+  color: #f5f0eb;
 }
 
 .bottom {
-  padding-top: 1rem;
-  color: #bdbdbd;
+  padding-top: 1.5rem;
+}
+
+.bottom small {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .footer-columns {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 640px) {
-  .top {
+  .footer-columns {
     flex-direction: column;
-  }
-
-  .links {
-    justify-content: flex-start;
+    gap: 1.5rem;
   }
 }
 </style>

@@ -1,38 +1,38 @@
 <template>
   <section class="about">
     <div class="container">
+      <span class="eyebrow">Notre histoire</span>
       <div class="grid">
         <div class="content">
-          <p class="eyebrow">L’univers</p>
-          <h2>Une boutique pensée pour les amoureux du son.</h2>
-          <p>
-            Ici, pas de catalogue interminable sans âme : on sélectionne des pressages qui sonnent juste.
-            Classiques, raretés, rééditions propres et nouveautés essentielles — tout est choisi pour sa
-            qualité et son histoire.
+          <h2>Une sélection pensée pour les amoureux du son.</h2>
+          <p class="desc">
+            Ici, pas de catalogue interminable sans âme. On sélectionne des pressages
+            qui sonnent juste — classiques, raretés, rééditions soignées et nouveautés
+            essentielles. Chaque vinyle est choisi pour sa qualité sonore et son histoire.
           </p>
-          <p>
-            L’objectif est simple : te faire vivre une expérience d’écoute authentique, du premier crackle
-            jusqu’au dernier refrain.
+          <p class="desc">
+            L'objectif est simple : te faire vivre une expérience d'écoute authentique,
+            du premier crackle jusqu'au dernier refrain.
           </p>
-
-          <div class="chips">
-            <span class="chip">Éditions limitées</span>
-            <span class="chip">Recommandations</span>
-            <span class="chip">Qualité contrôlée</span>
-            <span class="chip">Emballage renforcé</span>
-          </div>
+          <a class="about-link" href="/contact">En savoir plus →</a>
         </div>
 
-        <div class="card" aria-hidden="true">
-          <div class="card-inner">
-            <p class="card-title">Digger’s pick</p>
-            <p class="card-text">Chaque semaine, une sélection courte et nerveuse. 6 disques, 6 coups de cœur.</p>
-            <div class="swatches">
-              <span class="swatch s1"></span>
-              <span class="swatch s2"></span>
-              <span class="swatch s3"></span>
-              <span class="swatch s4"></span>
-            </div>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-value">2 500+</span>
+            <span class="stat-label">Vinyles vendus</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">350+</span>
+            <span class="stat-label">Références au catalogue</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">48h</span>
+            <span class="stat-label">Délai de livraison</span>
           </div>
         </div>
       </div>
@@ -43,123 +43,107 @@
 <style scoped>
 .about {
   width: 100%;
-  padding: 5rem 0;
-  background:
-    radial-gradient(900px 300px at 15% 25%, rgba(249, 115, 22, 0.16), transparent 60%),
-    radial-gradient(800px 280px at 85% 15%, rgba(124, 58, 237, 0.16), transparent 60%),
-    linear-gradient(180deg, rgba(250, 250, 250, 1), rgba(255, 255, 255, 1));
+  padding: 6rem 0;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1100px, calc(100% - 3rem));
   margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 2rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: start;
 }
 
 .content {
-  max-width: 70ch;
-}
-
-.eyebrow {
-  margin: 0 0 0.6rem;
-  display: inline-flex;
-  font-weight: 900;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.72);
-  background: rgba(6, 182, 212, 0.12);
-  border: 1px solid rgba(6, 182, 212, 0.16);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  max-width: 55ch;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  font-weight: 950;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+  color: #f5f0eb;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.desc {
   margin: 0 0 1rem;
-  color: var(--color-black);
-  letter-spacing: -0.02em;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
 }
 
-p {
-  margin: 0 0 1rem;
-  line-height: 1.7;
-  color: #333;
-}
-
-.chips {
-  margin-top: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  font-weight: 800;
+.about-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
   font-size: 0.85rem;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.82);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
 }
 
-.card {
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(6, 182, 212, 0.14), rgba(249, 115, 22, 0.14));
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 1px;
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+.about-link:hover {
+  color: #c9a96e;
 }
 
-.card-inner {
-  border-radius: 17px;
-  background: rgba(255, 255, 255, 0.85);
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.stat-item {
   padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: -0.5px;
 }
 
-.card-title {
-  margin: 0;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-  font-size: 1.2rem;
+.stat-value {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f5f0eb;
+  margin-bottom: 0.3rem;
 }
 
-.card-text {
-  margin: 0.75rem 0 0;
-  color: rgba(0, 0, 0, 0.7);
-  line-height: 1.6;
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
-
-.swatches {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 1.25rem;
-}
-
-.swatch {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.s1 { background: rgba(124, 58, 237, 0.55); }
-.s2 { background: rgba(6, 182, 212, 0.45); }
-.s3 { background: rgba(249, 115, 22, 0.45); }
-.s4 { background: rgba(0, 0, 0, 0.08); }
 
 @media (max-width: 1024px) {
   .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
     grid-template-columns: 1fr;
   }
 }

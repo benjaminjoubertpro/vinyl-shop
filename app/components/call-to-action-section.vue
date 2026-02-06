@@ -1,22 +1,36 @@
 <template>
   <section class="cta">
     <div class="container">
-      <div class="card">
-        <div class="text">
-          <p class="eyebrow">Let’s go</p>
-          <h2>Prêt à digger ton prochain coup de cœur ?</h2>
-          <p class="lead">Explore le catalogue complet et trouve l’album qui va tourner en boucle cette semaine.</p>
-
-          <div class="reassurance">
-            <span class="pill">Expédition protégée</span>
-            <span class="pill">Sélection premium</span>
-            <span class="pill">Support rapide</span>
-          </div>
+      <div class="cta-inner">
+        <span class="eyebrow">Explorer</span>
+        <h2>Prêt à trouver votre<br>prochain coup de cœur ?</h2>
+        <p class="lead">
+          Plus de 350 références vous attendent. Pressages originaux,
+          éditions limitées et raretés — explorez notre catalogue complet.
+        </p>
+        <div class="cta-actions">
+          <a class="btn-primary" href="/catalogue">Découvrir la collection</a>
+          <a class="btn" href="/contact">Nous contacter</a>
         </div>
+      </div>
 
-        <div class="actions">
-          <a class="btn2" href="#">Voir le catalogue</a>
-          <a class="btn" href="#">Voir les best-sellers</a>
+      <div class="newsletter">
+        <div class="newsletter-inner">
+          <div class="newsletter-text">
+            <h3>Restez informé</h3>
+            <p class="newsletter-desc">
+              Recevez notre sélection hebdomadaire et nos nouveautés.
+            </p>
+          </div>
+          <div class="newsletter-form">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="votre@email.com"
+              aria-label="Adresse email"
+            >
+            <button type="button" class="btn-primary newsletter-btn">S'inscrire</button>
+          </div>
         </div>
       </div>
     </div>
@@ -26,100 +40,153 @@
 <style scoped>
 .cta {
   width: 100%;
-  padding: 5rem 0;
+  padding: 6rem 0;
+  background: #0e0e0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1100px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
-.card {
-  color: #fff;
-  border-radius: 16px;
-  padding: 2.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  background:
-    radial-gradient(900px 260px at 15% 30%, rgba(255, 255, 255, 0.18), transparent 60%),
-    linear-gradient(135deg, rgba(124, 58, 237, 1) 0%, rgba(6, 182, 212, 1) 55%, rgba(249, 115, 22, 1) 100%);
-  box-shadow: 0 24px 70px rgba(124, 58, 237, 0.25);
-}
-
-.text {
-  min-width: 0;
+.cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
 }
 
 .eyebrow {
-  margin: 0 0 0.65rem;
-  display: inline-flex;
-  font-weight: 950;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  color: #c9a96e;
+  margin-bottom: 1.25rem;
 }
 
 h2 {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.6rem, 2.7vw, 2.2rem);
-  font-weight: 950;
-  letter-spacing: -0.02em;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 500;
+  color: #f5f0eb;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .lead {
+  margin: 0 0 2rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Newsletter --- */
+.newsletter {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 3rem;
+}
+
+.newsletter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.newsletter-text {
+  min-width: 0;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f5f0eb;
+}
+
+.newsletter-desc {
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
   line-height: 1.6;
 }
 
-.reassurance {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1.25rem;
-}
-
-.pill {
-  display: inline-flex;
-  padding: 0.45rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 800;
-  font-size: 0.85rem;
-}
-
-.actions {
+.newsletter-form {
   flex: 0 0 auto;
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 0;
 }
 
-@media (max-width: 640px) {
-  .card {
+.newsletter-input {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: none;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: transparent;
+  color: #f5f0eb;
+  min-width: 240px;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #c9a96e;
+}
+
+.newsletter-btn {
+  white-space: nowrap;
+  border-left: none;
+}
+
+@media (max-width: 768px) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-actions .btn-primary,
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .newsletter-inner {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .actions {
+  .newsletter-form {
     width: 100%;
-    justify-content: flex-start;
+    flex-direction: column;
   }
 
-  .btn2,
-  .btn {
-    display: inline-block;
+  .newsletter-input {
+    min-width: 0;
     width: 100%;
-    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: none;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    border-left: 1px solid var(--color-cream);
   }
 }
 </style>

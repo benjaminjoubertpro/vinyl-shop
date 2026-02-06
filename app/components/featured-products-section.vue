@@ -1,19 +1,24 @@
 <template>
-  <section class="featured">
+  <section id="produits" class="featured">
     <div class="container">
       <div class="header">
         <div class="heading">
-          <p class="eyebrow">En ce moment</p>
+          <span class="eyebrow">Collection</span>
           <h2>{{ title }}</h2>
-          <p class="subtitle">Les pressages que la communauté écoute en boucle — sélection courte, impact maximal.</p>
+          <p class="subtitle">
+            Des pressages sélectionnés pour leur qualité sonore et leur histoire.
+            Chaque vinyle est un choix éditorial.
+          </p>
         </div>
 
-        <div class="cta">
-          <a v-if="linkLabel" class="link" :href="linkHref">{{ linkLabel }}</a>
-        </div>
+        <a v-if="linkLabel" class="link" :href="linkHref">{{ linkLabel }} →</a>
       </div>
 
       <product-list :products="products" />
+
+      <div class="bottom-cta">
+        <a class="btn" href="/catalogue">Voir toute la collection</a>
+      </div>
     </div>
   </section>
 </template>
@@ -42,14 +47,12 @@ defineProps({
 <style scoped>
 .featured {
   width: 100%;
-  padding: 5rem 0;
-  background:
-    radial-gradient(800px 260px at 10% 20%, rgba(124, 58, 237, 0.12), transparent 60%),
-    radial-gradient(700px 240px at 85% 10%, rgba(6, 182, 212, 0.12), transparent 60%);
+  padding: 6rem 0;
+  background: #0a0a0a;
 }
 
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1100px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
@@ -57,79 +60,68 @@ defineProps({
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .heading {
   min-width: 0;
-  max-width: 72ch;
+  max-width: 50ch;
 }
 
 .eyebrow {
-  margin: 0 0 0.6rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 900;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.72);
-  background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(124, 58, 237, 0.18);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  color: #c9a96e;
+  margin-bottom: 0.75rem;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  font-weight: 900;
-  color: var(--color-black);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  color: #f5f0eb;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .subtitle {
-  margin: 0.6rem 0 0;
-  color: rgba(0, 0, 0, 0.7);
-  line-height: 1.6;
-}
-
-.cta {
-  flex: 0 0 auto;
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.65;
+  font-size: 0.88rem;
 }
 
 .link {
-  color: var(--color-black);
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  font-weight: 900;
-  border-radius: 999px;
-  padding: 0.65rem 1rem;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: transform 0.15s ease, background 0.15s ease;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .link:hover {
-  background: rgba(0, 0, 0, 0.09);
-  transform: translateY(-1px);
+  color: #c9a96e;
+}
+
+.bottom-cta {
+  margin-top: 3rem;
+  text-align: center;
 }
 
 @media (max-width: 640px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .cta {
-    width: 100%;
-  }
-
-  .link {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
+    gap: 1rem;
   }
 }
 </style>

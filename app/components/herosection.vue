@@ -1,169 +1,179 @@
 <template>
-    <section class="hero">
-        <div class="container">
-            <div class="hero-inner">
-                <div class="texthero">
-                    <p class="badge">Sélection premium • Pressages & éditions cultes</p>
-                    <h1>Le meilleur du vinyle, pour les oreilles exigeantes.</h1>
-                    <p class="subtitle">Classiques incontournables, raretés et nouveautés — choisis avec passion, expédiés avec soin.</p>
-
-                    <div class="herobtn">
-                        <a class="btn2" href="#">Découvrir le catalogue</a>
-                        <a class="btn" href="#">Nos meilleures ventes</a>
-                    </div>
-
-                    <div class="proof">
-                        <div class="stat">
-                            <span class="value">24h</span>
-                            <span class="label">Préparation</span>
-                        </div>
-                        <div class="stat">
-                            <span class="value">4.8/5</span>
-                            <span class="label">Avis clients</span>
-                        </div>
-                        <div class="stat">
-                            <span class="value">100%</span>
-                            <span class="label">Emballage protégé</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Collection exclusive</span>
+        <h1>L'art du vinyle,<br>pour les oreilles exigeantes.</h1>
+        <p class="subtitle">
+          Pressages originaux, éditions limitées et raretés — une sélection
+          pensée pour les vrais amateurs de musique.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/catalogue">Découvrir la collection</a>
+          <a class="btn" href="#produits">Meilleures ventes</a>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div class="container">
+        <div class="proof">
+          <div class="stat">
+            <span class="stat-value">2 500+</span>
+            <span class="stat-label">Vinyles vendus</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat-value">4.8/5</span>
+            <span class="stat-label">Avis clients</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat-value">48h</span>
+            <span class="stat-label">Livraison</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
 .hero {
-    width: 100%;
-    min-height: calc(100vh - 72px);
-    display: flex;
-    align-items: stretch;
-    background-image: url('assets/img/fondhero.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 5.5rem 0 3.5rem;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('assets/img/fondhero.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 45%, rgba(0, 0, 0, 0.35) 100%);
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(10, 10, 10, 0.75) 50%,
+    rgba(10, 10, 10, 0.95) 100%
+  );
 }
 
 .container {
-    width: min(1100px, calc(100% - 2rem));
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-.hero-inner {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3rem;
-    align-items: center;
+.hero-content {
+  max-width: 600px;
+  padding: 6rem 0 4rem;
 }
 
-.texthero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 62ch;
-}
-
-.badge {
-    margin: 0 0 1rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    padding: 0.4rem 0.75rem;
-    border-radius: 999px;
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 4.2vw, 3.3rem);
-    line-height: 1.05;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: -0.02em;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #f5f0eb;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
 }
 
 .subtitle {
-    margin: 0 0 1.5rem;
-    font-size: clamp(1rem, 1.4vw, 1.25rem);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 2.5rem;
+  max-width: 440px;
+  font-weight: 400;
 }
 
-.herobtn {
-    display: flex;
-    gap: 0.85rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.75rem;
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-bottom {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 3rem;
 }
 
 .proof {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .stat {
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 14px;
-    padding: 0.85rem 0.9rem;
-    min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.value {
-    display: block;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: -0.01em;
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f5f0eb;
 }
 
-.label {
-    display: block;
-    margin-top: 0.15rem;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.72);
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
+.divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
 
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 5rem 0 3rem;
+  }
 
-@media (max-width: 1024px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 2.25rem;
-    }
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
-    .hero {
-        padding: 4.75rem 0 3rem;
-    }
+  .proof {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-    .proof {
-        grid-template-columns: 1fr;
-    }
-
-    .herobtn .btn,
-    .herobtn .btn2 {
-        width: 100%;
-        text-align: center;
-    }
-
+  .divider {
+    width: 40px;
+    height: 1px;
+  }
 }
 </style>
