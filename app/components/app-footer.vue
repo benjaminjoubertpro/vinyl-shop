@@ -54,8 +54,8 @@ const year = new Date().getFullYear()
 .footer {
   width: 100%;
   padding: 3.5rem 0 2rem;
-  background: #070707;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border);
 }
 
 .container {
@@ -69,7 +69,7 @@ const year = new Date().getFullYear()
   justify-content: space-between;
   gap: 4rem;
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .brand {
@@ -77,16 +77,16 @@ const year = new Date().getFullYear()
 }
 
 .brand-name {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 600;
-  color: #f5f0eb;
+  color: var(--color-cream);
   letter-spacing: 0.01em;
 }
 
 .brand-desc {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-faint);
   line-height: 1.7;
   font-size: 0.8rem;
 }
@@ -102,7 +102,7 @@ const year = new Date().getFullYear()
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-ghost);
 }
 
 .footer-col nav {
@@ -112,7 +112,7 @@ const year = new Date().getFullYear()
 }
 
 .footer-col nav a {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 400;
@@ -121,7 +121,7 @@ const year = new Date().getFullYear()
 }
 
 .footer-col nav a:hover {
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .bottom {
@@ -129,7 +129,7 @@ const year = new Date().getFullYear()
 }
 
 .bottom small {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
 }

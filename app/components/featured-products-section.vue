@@ -48,7 +48,7 @@ defineProps({
 .featured {
   width: 100%;
   padding: 6rem 0;
-  background: #0a0a0a;
+  background: var(--color-bg);
 }
 
 .container {
@@ -63,7 +63,7 @@ defineProps({
   gap: 2rem;
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .heading {
@@ -77,15 +77,15 @@ defineProps({
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0;
   letter-spacing: -0.01em;
   line-height: 1.15;
@@ -93,13 +93,13 @@ h2 {
 
 .subtitle {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   line-height: 1.65;
   font-size: 0.88rem;
 }
 
 .link {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.85rem;
@@ -109,7 +109,7 @@ h2 {
 }
 
 .link:hover {
-  color: #c9a96e;
+  color: var(--color-gold);
 }
 
 .bottom-cta {

@@ -65,7 +65,7 @@ const isOpen = ref(false)
 .bar {
   background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .container {
@@ -83,7 +83,7 @@ const isOpen = ref(false)
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .logo {
@@ -92,7 +92,7 @@ const isOpen = ref(false)
 }
 
 .name {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.02em;
@@ -108,7 +108,7 @@ const isOpen = ref(false)
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.85rem;
@@ -118,7 +118,7 @@ const isOpen = ref(false)
 }
 
 .nav-link:hover {
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .right {
@@ -128,7 +128,7 @@ const isOpen = ref(false)
 }
 
 .header-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.85rem;
@@ -137,17 +137,17 @@ const isOpen = ref(false)
 }
 
 .header-link:hover {
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .burger {
   display: none;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border-strong);
   border-radius: 0;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   cursor: pointer;
 }
 
@@ -216,24 +216,24 @@ const isOpen = ref(false)
   .mobile-panel {
     width: min(400px, 100%);
     margin-left: auto;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-mid);
     padding: 1.25rem;
   }
 
   .mobile-link {
     display: block;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text);
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--color-border);
     transition: color 0.2s ease;
   }
 
   .mobile-link:hover {
-    color: #f5f0eb;
+    color: var(--color-cream);
   }
 
   .mobile-actions {

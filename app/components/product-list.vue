@@ -44,17 +44,17 @@ section {
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   text-align: left;
   margin: 0;
   font-size: clamp(1.35rem, 2.1vw, 1.85rem);
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .subtitle {
   margin: 0.65rem 0 0;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   line-height: 1.6;
   max-width: 70ch;
   font-size: 0.9rem;

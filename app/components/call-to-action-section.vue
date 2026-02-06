@@ -41,8 +41,8 @@
 .cta {
   width: 100%;
   padding: 6rem 0;
-  background: #0e0e0e;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
 }
 
 .container {
@@ -62,15 +62,15 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 1.25rem;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0 0 1.25rem;
   letter-spacing: -0.01em;
   line-height: 1.15;
@@ -78,7 +78,7 @@ h2 {
 
 .lead {
   margin: 0 0 2rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   line-height: 1.7;
   font-size: 0.9rem;
 }
@@ -92,7 +92,7 @@ h2 {
 
 /* --- Newsletter --- */
 .newsletter {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
   padding-top: 3rem;
 }
 
@@ -108,16 +108,16 @@ h2 {
 }
 
 h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   margin: 0 0 0.35rem;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .newsletter-desc {
   margin: 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   font-size: 0.85rem;
   line-height: 1.6;
 }
@@ -130,23 +130,23 @@ h3 {
 
 .newsletter-input {
   padding: 0.7rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border-strong);
   border-right: none;
   border-radius: 0;
   font-size: 0.85rem;
   font-family: inherit;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   min-width: 240px;
 }
 
 .newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-ghost);
 }
 
 .newsletter-input:focus {
   outline: none;
-  border-color: #c9a96e;
+  border-color: var(--color-gold);
 }
 
 .newsletter-btn {
@@ -180,7 +180,7 @@ h3 {
   .newsletter-input {
     min-width: 0;
     width: 100%;
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: 1px solid var(--color-border-strong);
     border-bottom: none;
   }
 

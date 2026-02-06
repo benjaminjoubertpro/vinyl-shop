@@ -49,8 +49,8 @@
 .benefits {
   width: 100%;
   padding: 6rem 0;
-  background: #0e0e0e;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
 }
 
 .container {
@@ -64,16 +64,16 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
   font-weight: 500;
   margin: 0 0 3rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -86,16 +86,16 @@ h2 {
 
 .item {
   padding: 1.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   margin: -0.5px;
   min-width: 0;
 }
 
 .number {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 0.85rem;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -104,14 +104,14 @@ h3 {
   margin: 0 0 0.6rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #f5f0eb;
+  color: var(--color-cream);
   letter-spacing: 0.01em;
 }
 
 .item-desc {
   margin: 0;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   font-size: 0.82rem;
 }
 

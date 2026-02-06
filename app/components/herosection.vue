@@ -80,16 +80,16 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 500;
   line-height: 1.1;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0 0 1.5rem;
   letter-spacing: -0.01em;
 }
@@ -97,7 +97,7 @@ h1 {
 .subtitle {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-soft);
   margin: 0 0 2.5rem;
   max-width: 440px;
   font-weight: 400;
@@ -120,7 +120,7 @@ h1 {
   align-items: center;
   gap: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border-mid);
 }
 
 .stat {
@@ -130,15 +130,15 @@ h1 {
 }
 
 .stat-value {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 600;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .stat-label {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   font-weight: 500;
   letter-spacing: 0.03em;
 }
@@ -146,7 +146,7 @@ h1 {
 .divider {
   width: 1px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-border-strong);
 }
 
 @media (max-width: 768px) {

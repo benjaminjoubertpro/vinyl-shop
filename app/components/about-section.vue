@@ -44,8 +44,8 @@
 .about {
   width: 100%;
   padding: 6rem 0;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .container {
@@ -59,7 +59,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 2rem;
 }
 
@@ -75,11 +75,11 @@
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
   font-weight: 500;
   margin: 0 0 1.5rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -87,14 +87,14 @@ h2 {
 .desc {
   margin: 0 0 1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   font-size: 0.9rem;
 }
 
 .about-link {
   display: inline-block;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
@@ -103,7 +103,7 @@ h2 {
 }
 
 .about-link:hover {
-  color: #c9a96e;
+  color: var(--color-gold);
 }
 
 .stats {
@@ -114,23 +114,23 @@ h2 {
 
 .stat-item {
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   margin: -0.5px;
 }
 
 .stat-value {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 600;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin-bottom: 0.3rem;
 }
 
 .stat-label {
   display: block;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-faint);
   font-weight: 500;
   letter-spacing: 0.02em;
 }

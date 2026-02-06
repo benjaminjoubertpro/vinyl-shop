@@ -94,7 +94,7 @@
           </div>
 
           <div class="grid">
-            <product-card v-for="p in featuredProducts" :key="p.id" :product="p" />
+            <product-card v-for="p in products" :key="p.id" :product="p" />
           </div>
 
           <div class="pagination" aria-label="Pagination">
@@ -158,7 +158,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { featuredProducts } from '../logic/product'
+import { products } from '~/logic/product'
 
 const filtersOpen = ref(false)
 </script>
@@ -167,7 +167,7 @@ const filtersOpen = ref(false)
 .page {
   width: 100%;
   padding: 2.5rem 0 5rem;
-  background: #0a0a0a;
+  background: var(--color-bg);
 }
 
 .container {
@@ -182,7 +182,7 @@ const filtersOpen = ref(false)
   gap: 1rem;
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .eyebrow {
@@ -191,23 +191,23 @@ const filtersOpen = ref(false)
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   margin: 0;
   font-weight: 500;
   letter-spacing: -0.01em;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: #f5f0eb;
+  color: var(--color-cream);
   line-height: 1.15;
 }
 
 .subtitle {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   line-height: 1.6;
   max-width: 50ch;
   font-size: 0.88rem;
@@ -215,20 +215,20 @@ h1 {
 
 .filter-btn {
   display: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border-strong);
   background: transparent;
   padding: 0.6rem 1rem;
   font-weight: 600;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
   cursor: pointer;
   letter-spacing: 0.03em;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .filter-btn:hover {
-  color: #f5f0eb;
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-cream);
+  border-color: var(--color-border-btn);
 }
 
 .layout {
@@ -244,26 +244,26 @@ h1 {
 }
 
 .panel {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #111;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   overflow: hidden;
   position: sticky;
   top: 86px;
 }
 
 .panel-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0;
   padding: 1.25rem 1.25rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .group {
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .group:last-of-type {
@@ -274,7 +274,7 @@ h1 {
   margin: 0 0 0.65rem;
   font-weight: 600;
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-faint);
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -293,26 +293,26 @@ h1 {
 .label {
   font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
 }
 
 .input {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.6rem 0.75rem;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   outline: none;
   font-family: inherit;
   font-size: 0.85rem;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
 }
 
 .input:focus {
-  border-color: #c9a96e;
+  border-color: var(--color-gold);
 }
 
 .chips {
@@ -322,19 +322,19 @@ h1 {
 }
 
 .chip {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border-strong);
   background: transparent;
   padding: 0.4rem 0.65rem;
   font-weight: 500;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-soft);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .chip:hover {
-  color: #f5f0eb;
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-cream);
+  border-color: var(--color-border-btn);
 }
 
 .checks {
@@ -346,7 +346,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-soft);
   font-weight: 500;
   font-size: 0.82rem;
 }
@@ -372,21 +372,21 @@ h1 {
 
 .search-input {
   flex: 1;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.65rem 0.85rem;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   outline: none;
   font-family: inherit;
   font-size: 0.85rem;
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
 }
 
 .search-input:focus {
-  border-color: #c9a96e;
+  border-color: var(--color-gold);
 }
 
 .controls {
@@ -399,10 +399,10 @@ h1 {
 }
 
 .select-input {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.65rem 0.75rem;
-  background: #111;
-  color: rgba(255, 255, 255, 0.6);
+  background: var(--color-surface);
+  color: var(--color-text);
   outline: none;
   font-family: inherit;
   font-size: 0.82rem;
@@ -415,12 +415,12 @@ h1 {
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .count {
   margin: 0;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   font-weight: 500;
   font-size: 0.82rem;
 }
@@ -435,9 +435,9 @@ h1 {
 .tag {
   display: inline-flex;
   padding: 0.3rem 0.55rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border-strong);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-soft);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
 }
@@ -467,7 +467,7 @@ h1 {
   gap: 0.75rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .pages {
@@ -481,28 +481,28 @@ h1 {
 .page-btn {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   background: transparent;
   font-weight: 500;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .page-btn:hover {
-  color: #f5f0eb;
-  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-cream);
+  border-color: var(--color-border-hover);
 }
 
 .page-btn.is-active {
-  color: #0a0a0a;
-  background: #f5f0eb;
-  border-color: #f5f0eb;
+  color: var(--color-bg);
+  background: var(--color-cream);
+  border-color: var(--color-cream);
 }
 
 .dots {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-ghost);
   font-size: 0.85rem;
 }
 
@@ -539,8 +539,8 @@ h1 {
     width: min(400px, 100%);
     height: calc(100vh - 2rem);
     margin-left: auto;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-mid);
     overflow: hidden;
     display: grid;
     grid-template-rows: auto 1fr;
@@ -551,22 +551,22 @@ h1 {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .drawer-head strong {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif);
     font-weight: 500;
-    color: #f5f0eb;
+    color: var(--color-cream);
   }
 
   .drawer-close {
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--color-border-mid);
     background: transparent;
     padding: 0.45rem 0.7rem;
     font-weight: 500;
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-light);
     cursor: pointer;
   }
 

@@ -1,8 +1,8 @@
 <template>
   <article class="product-card">
-    <div class="media">
-      <img :src="product.image" :alt="product.title">
-    </div>
+    <NuxtLink :to="`/produit/${product.slug}`" class="media">
+      <img :src="product.image" :alt="product.title" @error="(e) => e.target.src = '/img/placeholder.svg'">
+    </NuxtLink>
     <div class="body">
       <div class="info">
         <p class="artist">{{ product.artist }}</p>
@@ -10,7 +10,7 @@
       </div>
       <div class="bottom">
         <span class="price">{{ product.price }}&euro;</span>
-        <a class="card-link" href="#">Voir plus →</a>
+        <NuxtLink class="card-link" :to="`/produit/${product.slug}`">Voir plus →</NuxtLink>
       </div>
     </div>
   </article>
@@ -29,21 +29,21 @@ defineProps({
 .product-card {
   display: flex;
   flex-direction: column;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   overflow: hidden;
   transition: border-color 0.3s ease;
 }
 
 .product-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-border-strong);
 }
 
 .media {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #0e0e0e;
+  background: var(--color-bg-alt);
 }
 
 .media img {
@@ -72,7 +72,7 @@ defineProps({
 
 .artist {
   margin: 0 0 0.2rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   font-weight: 500;
   font-size: 0.78rem;
   letter-spacing: 0.03em;
@@ -82,11 +82,11 @@ defineProps({
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 600;
   margin: 0;
-  color: #f5f0eb;
+  color: var(--color-cream);
   line-height: 1.25;
   display: -webkit-box;
   line-clamp: 2;
@@ -101,18 +101,18 @@ defineProps({
   align-items: center;
   margin-top: auto;
   padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .price {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.1rem;
   font-weight: 600;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .card-link {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 500;
@@ -121,6 +121,6 @@ defineProps({
 }
 
 .card-link:hover {
-  color: #c9a96e;
+  color: var(--color-gold);
 }
 </style>

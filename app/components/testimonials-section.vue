@@ -49,8 +49,8 @@
 .testimonials {
   width: 100%;
   padding: 6rem 0;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .container {
@@ -64,16 +64,16 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.2vw, 2.2rem);
   font-weight: 500;
   margin: 0 0 3rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -86,7 +86,7 @@ h2 {
 
 .review {
   padding: 2rem 1.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   margin: -0.5px;
   display: flex;
   flex-direction: column;
@@ -96,10 +96,10 @@ h2 {
 .review-text {
   margin: 0;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
   font-size: 0.88rem;
   font-style: italic;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
 }
 
 .reviewer {
@@ -112,17 +112,17 @@ h2 {
 .reviewer-name {
   font-weight: 600;
   font-size: 0.8rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .reviewer-sep {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
   font-size: 0.8rem;
 }
 
 .reviewer-detail {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-faint);
   font-weight: 400;
 }
 

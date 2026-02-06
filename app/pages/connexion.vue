@@ -64,7 +64,7 @@
 .page {
   width: 100%;
   padding: 2.5rem 0 5rem;
-  background: #0a0a0a;
+  background: var(--color-bg);
   min-height: 80vh;
 }
 
@@ -76,7 +76,7 @@
 .hero {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .eyebrow {
@@ -85,23 +85,23 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   margin: 0;
   font-weight: 500;
   letter-spacing: -0.01em;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: #f5f0eb;
+  color: var(--color-cream);
   line-height: 1.15;
 }
 
 .subtitle {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   line-height: 1.6;
   font-size: 0.88rem;
 }
@@ -114,19 +114,19 @@ h1 {
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #111;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   overflow: hidden;
 }
 
 .card-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0;
   padding: 1.25rem 1.5rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .form {
@@ -150,11 +150,11 @@ h1 {
 .label {
   font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
 }
 
 .helper {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-faint);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.75rem;
@@ -162,33 +162,33 @@ h1 {
 }
 
 .helper:hover {
-  color: #c9a96e;
+  color: var(--color-gold);
 }
 
 .input {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.7rem 0.85rem;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   outline: none;
   font-family: inherit;
   font-size: 0.85rem;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
 }
 
 .input:focus {
-  border-color: #c9a96e;
+  border-color: var(--color-gold);
 }
 
 .check {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   font-weight: 500;
   font-size: 0.82rem;
 }
@@ -210,7 +210,7 @@ h1 {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
   font-weight: 500;
   font-size: 0.8rem;
 }
@@ -219,7 +219,7 @@ h1 {
 .divider::after {
   content: '';
   height: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-border);
 }
 
 .social {
@@ -229,10 +229,10 @@ h1 {
 
 .social-btn {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.7rem;
   background: transparent;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-text-soft);
   font-weight: 500;
   font-size: 0.82rem;
   font-family: inherit;
@@ -241,27 +241,27 @@ h1 {
 }
 
 .social-btn:hover {
-  color: #f5f0eb;
-  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-cream);
+  border-color: var(--color-border-hover);
 }
 
 .side-card {
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   padding: 1.75rem;
 }
 
 .side-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   margin: 0 0 1rem;
   font-weight: 500;
   font-size: 1rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
 }
 
 .bullets {
   margin: 0;
   padding-left: 1rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   line-height: 1.9;
   font-size: 0.85rem;
   font-weight: 400;

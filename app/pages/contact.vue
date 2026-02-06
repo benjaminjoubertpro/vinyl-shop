@@ -107,7 +107,7 @@
 .page {
   width: 100%;
   padding: 2.5rem 0 5rem;
-  background: #0a0a0a;
+  background: var(--color-bg);
 }
 
 .container {
@@ -118,7 +118,7 @@
 .hero {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .eyebrow {
@@ -127,23 +127,23 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c9a96e;
+  color: var(--color-gold);
   margin-bottom: 0.75rem;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   margin: 0;
   font-weight: 500;
   letter-spacing: -0.01em;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: #f5f0eb;
+  color: var(--color-cream);
   line-height: 1.15;
 }
 
 .subtitle {
   margin: 0.75rem 0 0;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
   line-height: 1.65;
   max-width: 55ch;
   font-size: 0.88rem;
@@ -162,18 +162,18 @@ h1 {
 }
 
 .info-block {
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   margin-bottom: 1px;
 }
 
 .block-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 0.95rem;
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0;
   padding: 1.25rem 1.25rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .info-list {
@@ -190,14 +190,14 @@ h1 {
 .info-label {
   font-size: 0.7rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-ghost);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .info-value {
   font-size: 0.88rem;
-  color: #f5f0eb;
+  color: var(--color-cream);
   font-weight: 400;
 }
 
@@ -211,11 +211,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   font-weight: 400;
   font-size: 0.85rem;
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .hour:last-child {
@@ -223,7 +223,7 @@ h1 {
 }
 
 .map-placeholder {
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
   padding: 2.5rem 1.25rem;
   min-height: 160px;
   display: grid;
@@ -233,25 +233,25 @@ h1 {
 
 .map-text {
   margin: 0;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
   font-size: 0.82rem;
   font-style: italic;
 }
 
 .form-card {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #111;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   overflow: hidden;
 }
 
 .form-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 500;
-  color: #f5f0eb;
+  color: var(--color-cream);
   margin: 0;
   padding: 1.25rem 1.5rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .form {
@@ -274,24 +274,24 @@ h1 {
 .f-label {
   font-size: 0.78rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-lighter);
 }
 
 .input,
 .select,
 .textarea {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-mid);
   padding: 0.7rem 0.85rem;
   background: transparent;
-  color: #f5f0eb;
+  color: var(--color-cream);
   outline: none;
   font-family: inherit;
   font-size: 0.85rem;
 }
 
 .select {
-  background: #111;
+  background: var(--color-surface);
 }
 
 .textarea {
@@ -300,13 +300,13 @@ h1 {
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
-  border-color: #c9a96e;
+  border-color: var(--color-gold);
 }
 
 .consent {
@@ -317,7 +317,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-light);
   font-weight: 500;
   font-size: 0.82rem;
 }
@@ -336,7 +336,7 @@ h1 {
 
 .footnote {
   margin: 0;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-dim);
   line-height: 1.6;
   font-size: 0.78rem;
 }
