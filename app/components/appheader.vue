@@ -16,6 +16,13 @@
         </nav>
 
         <div class="right">
+          <NuxtLink class="cart-icon" to="/panier" aria-label="Panier">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span v-if="totalItems > 0" class="cart-badge">{{ totalItems }}</span>
+          </NuxtLink>
           <a class="header-link" href="/connexion">Connexion</a>
           <a class="btn" href="/inscription">Inscription</a>
 
@@ -41,6 +48,9 @@
           <a class="mobile-link" href="/contact">Contact</a>
         </nav>
         <div class="mobile-actions">
+          <NuxtLink class="mobile-link" to="/panier" @click="isOpen = false">
+            Panier<span v-if="totalItems > 0"> ({{ totalItems }})</span>
+          </NuxtLink>
           <a class="header-link" href="/connexion">Connexion</a>
           <a class="btn" href="/inscription">Inscription</a>
         </div>
@@ -50,9 +60,17 @@
 </template>
 
 <script setup>
+// ref = crée une variable réactive (Vue met à jour l'affichage quand elle change)
 import { ref } from 'vue'
 
+// On importe le panier pour afficher le nombre d'articles dans le badge
+import { useCart } from '~/composables/useCart'
+
+// isOpen = true quand le menu mobile est ouvert, false quand il est fermé
 const isOpen = ref(false)
+
+// totalItems = nombre d'articles dans le panier (affiché dans le petit badge doré)
+const { totalItems } = useCart()
 </script>
 
 <style scoped>
@@ -138,6 +156,38 @@ const isOpen = ref(false)
 
 .header-link:hover {
   color: var(--color-cream);
+}
+
+/* ---- Icône panier ---- */
+.cart-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cart-icon:hover {
+  color: var(--color-cream);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--color-gold);
+  color: #0a0a0a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
 }
 
 .burger {

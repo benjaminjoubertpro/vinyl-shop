@@ -859,30 +859,75 @@ export const products = [
 
 // ---------------------------------------------------------------------------
 // Fonctions utilitaires
+// Ces fonctions sont utilisées par les pages pour chercher des produits.
 // ---------------------------------------------------------------------------
 
-// Tous les produits (alias pour compatibilité)
+// Les 9 premiers produits (affichés sur la page d'accueil)
 export const featuredProducts = products.slice(0, 9)
 
-// Trouver un produit par son slug (utilisé par la page /produit/[slug])
+// ---- Trouver un produit par son slug ----
+// Exemple : getProductBySlug('thriller') → retourne l'objet Thriller
+// Utilisé par la page /produit/[slug] pour afficher le bon produit
 export function getProductBySlug(slug) {
-    return products.find(p => p.slug === slug) || null
-}
-
-// Trouver des produits similaires (même genre ou même artiste, max 4)
-export function getRelatedProducts(product, max = 4) {
-    if (!product) return []
-    return products
-        .filter(p => p.id !== product.id && (p.genre === product.genre || p.artist === product.artist))
-        .slice(0, max)
-}
-
-// Texte lisible pour le stock
-export function getStockLabel(stock) {
-    const labels = {
-        in_stock: 'En stock',
-        limited: 'Stock limité',
-        out_of_stock: 'Rupture de stock'
+    // On parcourt tous les produits un par un
+    for (let i = 0; i < products.length; i++) {
+        // Si le slug correspond, on retourne ce produit
+        if (products[i].slug === slug) {
+            return products[i]
+        }
     }
-    return labels[stock] || 'Indisponible'
+    // Si aucun produit ne correspond, on retourne null
+    return null
+}
+
+// ---- Trouver des produits similaires ----
+// On cherche des produits qui ont le même genre OU le même artiste
+// max = nombre maximum de résultats (par défaut 4)
+export function getRelatedProducts(product, max) {
+    // Si pas de produit, on retourne un tableau vide
+    if (!product) {
+        return []
+    }
+
+    // Par défaut, on veut 4 résultats
+    if (!max) {
+        max = 4
+    }
+
+    let resultats = []
+
+    for (let i = 0; i < products.length; i++) {
+        // On ne veut pas le produit lui-même dans les résultats
+        if (products[i].id === product.id) {
+            continue
+        }
+
+        // Si même genre OU même artiste → c'est un produit similaire
+        if (products[i].genre === product.genre || products[i].artist === product.artist) {
+            resultats.push(products[i])
+        }
+
+        // Si on a assez de résultats, on s'arrête
+        if (resultats.length >= max) {
+            break
+        }
+    }
+
+    return resultats
+}
+
+// ---- Texte lisible pour le stock ----
+// Transforme la valeur technique en texte français
+// Exemple : getStockLabel('in_stock') → "En stock"
+export function getStockLabel(stock) {
+    if (stock === 'in_stock') {
+        return 'En stock'
+    }
+    if (stock === 'limited') {
+        return 'Stock limité'
+    }
+    if (stock === 'out_of_stock') {
+        return 'Rupture de stock'
+    }
+    return 'Indisponible'
 }

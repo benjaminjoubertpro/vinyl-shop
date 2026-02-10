@@ -33,8 +33,12 @@
           <p class="description">{{ product.description }}</p>
 
           <div class="actions">
-            <button class="btn-primary" :disabled="product.stock === 'out_of_stock'">
-              Ajouter au panier
+            <button
+              class="btn-primary"
+              :disabled="product.stock === 'out_of_stock'"
+              @click="handleAddToCart"
+            >
+              {{ added ? 'Ajouté ✓' : 'Ajouter au panier' }}
             </button>
             <NuxtLink to="/catalogue" class="btn">Continuer mes achats</NuxtLink>
           </div>
@@ -128,26 +132,66 @@
 </template>
 
 <script setup>
+// ref = crée une variable réactive (Vue met à jour l'affichage quand elle change)
+import { ref } from 'vue'
+
+// On importe nos fonctions depuis le fichier product.js (notre base de données)
 import { getProductBySlug, getRelatedProducts, getStockLabel } from '~/logic/product'
 
-// Récupérer le slug depuis l'URL
+// On importe la fonction du panier
+import { useCart } from '~/composables/useCart'
+
+// ---- 1. Récupérer le slug depuis l'URL ----
+// Si l'URL est /produit/thriller → slug vaut "thriller"
+// useRoute() est une fonction fournie par Nuxt pour lire l'URL
 const route = useRoute()
 const slug = route.params.slug
 
-// Trouver le produit correspondant
+// ---- 2. Chercher le produit dans notre base de données ----
+// getProductBySlug parcourt le tableau products et retourne celui qui correspond
+// Si aucun produit ne correspond → product vaut null
 const product = getProductBySlug(slug)
 
-// Trouver les produits similaires
+// ---- 3. Chercher 4 produits similaires (même genre ou même artiste) ----
 const related = getRelatedProducts(product, 4)
 
-// Texte et classe CSS pour le stock
-const stockLabel = product ? getStockLabel(product.stock) : ''
-const stockClass = product ? product.stock : ''
+// ---- 4. Texte pour le stock ----
+// On transforme "in_stock" en "En stock", "limited" en "Stock limité", etc.
+// stockClass sert à appliquer la bonne couleur CSS
+let stockLabel = ''
+let stockClass = ''
+if (product) {
+    stockLabel = getStockLabel(product.stock)
+    stockClass = product.stock
+}
 
-// SEO : titre de la page dynamique
-useHead({
-  title: product ? `${product.title} — ${product.artist}` : 'Produit introuvable'
-})
+// ---- 5. Panier ----
+// On récupère la fonction addToCart depuis useCart
+const { addToCart } = useCart()
+
+// Variable pour afficher "Ajouté ✓" temporairement
+const added = ref(false)
+
+// Fonction appelée quand on clique sur "Ajouter au panier"
+function handleAddToCart() {
+    // Ajouter le produit au panier
+    addToCart(product)
+
+    // Afficher "Ajouté ✓" sur le bouton
+    added.value = true
+
+    // Après 2 secondes, remettre le texte normal
+    setTimeout(function () {
+        added.value = false
+    }, 2000)
+}
+
+// ---- 6. Titre de la page dans l'onglet du navigateur ----
+if (product) {
+    useHead({ title: product.title + ' — ' + product.artist })
+} else {
+    useHead({ title: 'Produit introuvable' })
+}
 </script>
 
 <style scoped>
